@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>CRUD</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="container overflow-auto py-3">
+        <form class="p-2">
+            <h1 class="text-center">Inventario</h1>
+            <label for="nombreInput">Nombre del Producto:</label>
+            <input id="nombreInput" type="text" class="form-control my-1">
+            <div id="alertaNombre" class="d-none alert alert-danger py-2 mb-2">Este Nombre No Es Válido<br>Ejemplo: MacBook pro 13</div>
+            <label for="precioInput">Precio del Producto:</label>
+            <input id="precioInput" type="number" class="form-control my-1">
+            <div id="alertaPrecio" class="d-none alert alert-danger py-2 mb-2">Este Precio No Es Válido<br>Ejemplo: 1000</div>
+            <label for="categoriaInput">Categoría del Producto:</label>
+            <select id="categoriaInput" class="form-select mt-1 mb-2">
+                <option value="SMARTPHONE">SMARTPHONE</option>
+                <option value="CONSOLA" selected>CONSOLA</option>
+				<option value="ELECTRODOMESTICO" selected>ELECTRODOMESTICO</option>
+				<option value="MUEBLE" selected>MUEBLE</option>
+                <option value="COMPUTADORA">COMPUTADORA</option>
+            </select>
+            <div id="alertaCategoria" class="d-none alert alert-danger py-2 mb-2">Debes Seleccionar Cualquier Valor</div>
+            <label for="condicionInput">Condición del Producto:</label>
+            <select id="condicionInput" class="form-select mt-1 mb-3">
+                <option class="bg-success text-white" value="Excellent">Excelente</option>
+                <option class="bg-warning text-white" value="Good" selected>Bueno</option>
+                <option class="bg-danger text-white" value="Bad">Malo</option>
+            </select>
+            <div id="alertaCondicion" class="d-none alert alert-danger py-2 mb-2">Debes Seleccionar Cualquier Valor</div>
+            <div class="text-center w-100">
+                <button id="botonAgregar" class="btn mb-1 mb-sm-0 btn-success text-white" type="button">Agregar</button>
+                <button id="botonLimpiar" class="btn mb-1 mb-sm-0 btn-outline-success" type="button">Limpiar Formulario</button>
+            </div>
+            <input id="busquedaInput" class="form-control my-4" placeholder="Buscar Por Nombre..." type="search">
+        </form>
+        <table class="table table-striped text-center p-2">
+            <thead>
+                <th>Índice</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categoría</th>
+                <th>Condición</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody id="cuerpoTabla"></tbody>
+        </table>
+    </div>
+    <script src="JS/index.js"></script>
+</body>
+</html>
